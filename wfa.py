@@ -11,8 +11,10 @@ import string
 frequency = {}
 results = []
 
-document_text = open('/home/user/Desktop/test.txt', 'r')
-text_string = document_text.read().lower()
+infile = '/home/user/Desktop/test.txt'
+with open(infile, 'r') as handle:
+  content = handle.read().lower()
+
 match_pattern = re.findall(r'\b[a-z]{3,15}\b', text_string)
 
 for word in match_pattern:
